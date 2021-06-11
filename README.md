@@ -1,2 +1,8 @@
 # rproud-cli
-rproud-cli
+rproud-cli 脚手架。自动生成项目结构。
+
+TODO LIST
+- [ ] 支持 JavaScript、TypeScript
+- [ ] 支持 Browser、NPM
+- [ ] Webpack
+- [ ] 支持 Less、Sass
