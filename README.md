@@ -6,3 +6,6 @@ TODO LIST
 - [ ] 支持 Browser、NPM
 - [ ] Webpack
 - [ ] 支持 Less、Sass
+
+# Lisense
+MIT
