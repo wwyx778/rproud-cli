@@ -7,7 +7,7 @@ const options = await inputOptions();
 const { packageName, language } = options;
 const lang = {
   JAVASCRIPT: 'js',
-  TYPESCRIPT: 'ts',
+  TYPESCRIPT: 'tsx',
 }[language];
 // * 创建项目文件、目录
 fs.mkdirSync(`${packageName}`);
