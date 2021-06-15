@@ -15,6 +15,7 @@ fs.mkdirSync(`${packageName}`);
 fs.writeFileSync(`${packageName}/index.html`, createFile('index.html'));
 fs.writeFileSync(`${packageName}/index.${lang}`, createFile(`${lang}/index`));
 fs.writeFileSync(`${packageName}/component.${lang}`, createFile(`${lang}/component`));
+fs.writeFileSync(`${packageName}/styles.css`, createFile(`styles`));
 fs.writeFileSync(
   `${packageName}/package.json`,
   createFile('package', { ts: language === 'TYPESCRIPT' }),
