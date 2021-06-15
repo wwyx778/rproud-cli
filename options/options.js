@@ -8,4 +8,15 @@ const packageName = () => ({
   },
 });
 
-export { packageName };
+const language = () => ({
+  type: 'list',
+  name: 'language',
+  message: 'Please select language...',
+  choices: ['JavaScript', 'TypeScript'],
+  filter: function (val) {
+    // 使用filter将回答变为大写
+    return val.toUpperCase();
+  },
+});
+
+export { packageName, language };

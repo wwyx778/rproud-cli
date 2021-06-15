@@ -1,27 +1,27 @@
 import fs from 'fs';
 import inputOptions from './options/index.js';
-import createFileByTemplate from './utils/createFileByTemplate.js';
-// var inquirer = require('inquirer');
-// TODO 用户输入
+import createFile from './utils/createFileByTemplate.js';
+
+// * 用户输入
 const options = await inputOptions();
+const { packageName, language } = options;
+const lang = {
+  JAVASCRIPT: 'js',
+  TYPESCRIPT: 'ts',
+}[language];
+// * 创建项目文件、目录
+fs.mkdirSync(`${packageName}`);
 
-// TODO 创建项目文件、目录
-fs.mkdirSync(`${options.packageName}`);
-
-fs.writeFileSync(`${options.packageName}/index.js`, 'index.js');
-
+fs.writeFileSync(`${packageName}/index.html`, createFile('index.html'));
+fs.writeFileSync(`${packageName}/index.${lang}`, createFile(`${lang}/index`));
+fs.writeFileSync(`${packageName}/component.${lang}`, createFile(`${lang}/component`));
 fs.writeFileSync(
-  `${options.packageName}/package.json`,
-  createFileByTemplate('./template/package.json'),
+  `${packageName}/package.json`,
+  createFile('package', { ts: language === 'TYPESCRIPT' }),
 );
 
-fs.writeFileSync(`${options.packageName}/webpack.config.js`, 'index.js');
+// fs.writeFileSync(`${packageName}/webpack.config`, createFile('webpack.config.js'));
 
-fs.writeFileSync(`${options.packageName}/.gitignore`, 'index.js');
+// fs.writeFileSync(`${packageName}/postcss.config`, '');
 
-// TODO 1.创建项目文件
-// TODO 1.创建项目文件
-
-function getPackageName() {
-  return './hei';
-}
+fs.writeFileSync(`${packageName}/.gitignore`, 'node_modules/');

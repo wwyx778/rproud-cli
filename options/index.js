@@ -1,10 +1,12 @@
 import inquirer from 'inquirer';
 
-import { packageName } from './options.js';
+import { packageName, language } from './options.js';
 
 export default () => {
   return inquirer.prompt([
-    //1
+    // * 输入项目名
     packageName(),
+    // * 选择语言（JavaScript/TypeScript）
+    language(),
   ]);
 };
