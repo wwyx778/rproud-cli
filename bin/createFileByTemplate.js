@@ -1,8 +1,11 @@
 import fs from 'fs';
 import ejs from 'ejs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 function getTpltPath(fileName) {
-  return `template/${fileName}.ejs`;
+  const __dirname = fileURLToPath(import.meta.url);
+  return path.resolve(__dirname, `../template/${fileName}.ejs`);
 }
 
 /**
