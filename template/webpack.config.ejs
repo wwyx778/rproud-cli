@@ -4,14 +4,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const config = {
+let config = {
   mode: isDev ? 'development' : 'production',
   entry: {
-    component: { import: './src/index.tsx', filename: 'component/index.js' },
-    main: './public/index.js',
+    main: './src/index.js',
   },
-  plugins: [
-  ],
+  plugins: [],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, isDev ? 'build/' : 'dist/'),
@@ -23,22 +21,29 @@ const config = {
     hot: true,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-          // plugins: [require.resolve('react-refresh/babel')],
+          // presets: ['@babel/preset-env', '@babel/preset-react'],
+          presets: [
+            '@babel/preset-env',
+            [
+              '@babel/preset-react',
+              {
+                runtime: 'automatic',
+              },
+            ],
+          ],
         },
       },
       {
         test: /\.(css|scss|less)$/i,
-        // exclude: '/node_modules/',
         use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
       },
       {
@@ -50,7 +55,6 @@ const config = {
     ],
   },
   optimization: {
-    // minimize: true,
     minimizer: [
       new TerserPlugin({
         extractComments: false,
@@ -59,12 +63,20 @@ const config = {
   },
 };
 
-isDev &&
-  config.plugins.push(
-    new HtmlWebpackPlugin({
-      title: 'Lov for AntDesign',
-      template: './public/index.html',
-    }),
-  );
+if (isDev) {
+  config = Object.assign(config, {
+    devtool: 'inline-source-map',
+    devServer: {
+      contentBase: './build',
+      hot: true,
+    },
+    plugins: [
+      ...config.plugins,
+      new HtmlWebpackPlugin({
+        template: './public/index.html',
+      }),
+    ],
+  });
+}
 
 module.exports = config;
