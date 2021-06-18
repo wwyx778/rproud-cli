@@ -20,4 +20,3 @@ const language = () => ({
 });
 
 module.exports = { packageName, language };
-// export { packageName, language };
