@@ -1,8 +1,7 @@
-import inquirer from 'inquirer';
+const inquirer = require('inquirer');
+const { packageName, language } = require('./options.js');
 
-import { packageName, language } from './options.js';
-
-export default () => {
+module.exports = () => {
   return inquirer.prompt([
     // * 输入项目名
     packageName(),

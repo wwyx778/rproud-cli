@@ -2,7 +2,7 @@
   "name": "rproud-cli",
   "version": "1.0.0",
   "description": "rproud-cli",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "bin": "./bin/index.js",
   "files": [

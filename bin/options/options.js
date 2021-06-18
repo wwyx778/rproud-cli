@@ -19,4 +19,5 @@ const language = () => ({
   },
 });
 
-export { packageName, language };
+module.exports = { packageName, language };
+// export { packageName, language };

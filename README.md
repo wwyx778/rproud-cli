@@ -24,9 +24,10 @@ rproud-cli
 ```
 
 ## Todo List
-- [ ] 支持 JavaScript、TypeScript
+- [x] 支持 JavaScript
+- [ ] 支持 TypeScript
 - [ ] 支持 Browser、NPM
-- [ ] Webpack
+- [x] Webpack
 - [ ] 支持 Less、Sass
 
 ## Lisense
