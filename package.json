@@ -4,7 +4,9 @@
   "description": "rproud-cli",
   "type": "commonjs",
   "main": "index.js",
-  "bin": "./bin/index.js",
+  "bin": {
+    "rp": "./bin/index.js"
+  },
   "files": [
     "bin",
     "package.json"
