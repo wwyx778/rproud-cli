@@ -9,9 +9,9 @@
   </a>
 </p>
 
-rproud-cli 脚手架。自动生成项目结构。
+✨ rproud-cli 脚手架。自动生成项目结构。
 
-## Install
+## 📦 Install
 
 ```sh
 npm install rproud-cli
@@ -20,15 +20,15 @@ npm install rproud-cli
 ## 🚀 Usage
 
 ```sh
-rproud-cli
+rp
 ```
 
-## Todo List
+## 📋 Todo List
 - [x] 支持 JavaScript
 - [x] 支持 TypeScript
 - [ ] 支持 Browser、NPM
 - [x] Webpack
 - [ ] 支持 Less、Sass
 
-## Lisense
+## 📌 Lisense
 MIT
