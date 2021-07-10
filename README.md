@@ -20,7 +20,7 @@ npm install rproud-cli
 ## 🚀 Usage
 
 ```sh
-rp
+rproud-cli
 ```
 
 ## 📋 Todo List
