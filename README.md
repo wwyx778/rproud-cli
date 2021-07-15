@@ -29,6 +29,7 @@ rproud-cli
 - [ ] 支持 Browser、NPM
 - [x] Webpack
 - [ ] 支持 Less、Sass
+- [ ] 简化使用命令
 
 ## 📌 Lisense
 MIT
