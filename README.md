@@ -30,6 +30,7 @@ rproud-cli
 - [x] Webpack
 - [ ] 支持 Less、Sass
 - [ ] 简化使用命令
+- [ ] 使用 Git 增强模板
 
 ## 📌 Lisense
 MIT
