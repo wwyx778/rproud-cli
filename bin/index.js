@@ -25,7 +25,7 @@ const createFile = require('./utils/createFileByTemplate.js');
   fs.writeFileSync(`${packageName}/src/index.${lang}`, createFile(`${lang}/index`));
   fs.writeFileSync(`${packageName}/src/component.${lang}`, createFile(`${lang}/component`));
   fs.writeFileSync(`${packageName}/src/styles.css`, createFile(`styles`));
-  fs.writeFileSync(`${packageName}/package.json`, createFile('package', { ts: ts }));
+  fs.writeFileSync(`${packageName}/package.json`, createFile('package', { ts: ts, packageName: packageName }));
 
   fs.writeFileSync(`${packageName}/webpack.config.js`, createFile('webpack.config', { ts: ts }));
 
