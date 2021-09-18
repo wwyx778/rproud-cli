@@ -25,8 +25,8 @@
     "type": "git",
     "url": "git+https://github.com/wwyx778/rproud-cli.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "https://github.com/wwyx778",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wwyx778/rproud-cli/issues"
   },
