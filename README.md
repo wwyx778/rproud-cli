@@ -31,6 +31,7 @@ rproud-cli
 - [ ] 支持 Less、Sass
 - [ ] 简化使用命令
 - [ ] 使用 Git 增强模板
+- [x] 兼容 Windows 系统
 
 ## 📌 Lisense
 MIT
